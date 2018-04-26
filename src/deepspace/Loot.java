@@ -15,6 +15,16 @@ import java.util.logging.Logger;
  */
 class Loot {
     private int nSupplies, nWeapons, nShields, nHangars, nMedals;
+    private boolean getEfficient, spaceCity;
+    Loot(int nSupplies, int nWeapons, int nShields, int nHangars, int nMedals, boolean ef, boolean city) {
+        this.nSupplies = nSupplies;
+        this.nWeapons = nWeapons;
+        this.nShields = nShields;
+        this.nHangars = nHangars;
+        this.nMedals = nMedals;
+        spaceCity = city;
+        getEfficient = ef;
+    }   
 
     Loot(int nSupplies, int nWeapons, int nShields, int nHangars, int nMedals) {
         this.nSupplies = nSupplies;
@@ -22,8 +32,16 @@ class Loot {
         this.nShields = nShields;
         this.nHangars = nHangars;
         this.nMedals = nMedals;
-    }   
-
+        spaceCity = false;
+        getEfficient= false;
+    } 
+    public boolean getEfficient(){
+        return getEfficient;
+    }
+    
+    public boolean spaceCity(){
+        return spaceCity;
+    }
     public int getNSupplies() {
         return nSupplies;
     }

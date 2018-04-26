@@ -20,12 +20,6 @@ public class SpecificDamage extends Damage {
         weapons = w;
     }
     
-    @Override
-    public int getNWeapons(){
-        return weapons.size();
-    }
-    
-    @Override
     public ArrayList<WeaponType> getWeapons(){
         return weapons;
     }

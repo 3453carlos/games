@@ -15,6 +15,8 @@ public class LootToUI {
     private final int nShields;
     private final int nHangars;
     private final int nMedals;
+    private final boolean efficient;
+    private final boolean spaceCity;
 
     LootToUI(Loot l) {
         nSupplies=l.getNSupplies();
@@ -22,6 +24,8 @@ public class LootToUI {
         nShields=l.getNShields();
         nHangars=l.getNHangars();
         nMedals=l.getNMedals();
+        efficient = l.getEfficient();
+        spaceCity = l.spaceCity();        
     }  
 
     public int getnSupplies() {
@@ -42,6 +46,14 @@ public class LootToUI {
 
     public int getnMedals() {
         return nMedals;
+    }
+    
+    public boolean getEfficient() {
+        return efficient;
+    }
+    
+    public boolean spaceCity() {
+        return spaceCity;
     }
     
     

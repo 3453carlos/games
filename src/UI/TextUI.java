@@ -69,7 +69,12 @@ public class TextUI {
                 pause ("\n Has logrado escapar. Eres una Gallina Espacial.");
                 break;
               case STATIONWINS :
-                pause ("\n Has GANADO el combate. Disfruta de tu botín.");
+                String cout = "\n Has GANADO el combate. Disfruta de tu botín.";
+                if( gameUI.getCurrentEnemy().getLoot().getEfficient() )
+                    cout += " ¡Tu eficiencia ha mejorado! ";
+                if( gameUI.getCurrentEnemy().getLoot().spaceCity() )
+                    cout += " ¡Has creado una ciudad espacial! ";
+                pause (cout);
                 if (controller.haveAWinner()) {
                     pause ("\n\n **** **** ****  HAS GANADO LA PARTIDA  **** **** ****\n");
                     System.exit (0);
@@ -259,6 +264,8 @@ public class TextUI {
       out += " - Hangares .. : " + aLoot.getnHangars() + "\n";
       out += " - Suministros : " + aLoot.getnSupplies() + "\n";
       out += " - Medallas .. : " + aLoot.getnMedals() + "\n";
+      out += " - SpaceCity . : " + aLoot.spaceCity() + "\n";
+      out += " - Efficient . : " + aLoot.getEfficient() + "\n";
       return out;
   }
   

@@ -9,7 +9,7 @@ package deepspace;
  *
  * @author victor
  */
-public class EnemyStarShip {
+public class EnemyStarShip implements SpaceFighter{
     private float ammoPower, shieldPower;
     private String name;
     private Loot loot;

@@ -13,12 +13,12 @@ import java.lang.Math.*;
  *
  * @author victor
  */
-public class SpaceStation {
+public class SpaceStation implements SpaceFighter{
     private static int MAXFUEL = 100; 
     private static float SHIELDLOSSPERUNITSHOT = 0.1f;
     
     private float ammoPower, fuelUnits, shieldPower;
-    private int nMedals;
+    private int nMedals; 
     private String name;
     private Damage pendingDamage;
     private ArrayList<Weapon> weapons;
@@ -35,6 +35,21 @@ public class SpaceStation {
         shieldBoosters = new ArrayList();
         nMedals = 0;
     }
+    
+    SpaceStation(SpaceStation c){
+        name = c.name;
+        ammoPower = c.ammoPower;
+        fuelUnits = c.fuelUnits;
+        shieldPower = c.shieldPower;
+        for(int i = 0; i < c.weapons.size(); i++)
+            weapons.add(c.weapons.get(i));
+        for(int i = 0; i < c.shieldBoosters.size(); i++)
+            shieldBoosters.add(c.shieldBoosters.get(i));
+        nMedals = c.nMedals;
+        hangar = c.hangar;
+        pendingDamage = c.pendingDamage;        
+    }   
+    
     private void assignFuelValue(float f) {
       if(f<=  MAXFUEL)
         fuelUnits = f;
@@ -200,7 +215,7 @@ public class SpaceStation {
             return ShotResult.DONOTRESIST;
         }   
     }
-    public void setLoot(Loot loot) { 
+    public Transformation setLoot(Loot loot) { 
         CardDealer dealer = CardDealer.getInstance();
         int h = loot.getNHangars();
         if(h > 0) {
@@ -227,7 +242,14 @@ public class SpaceStation {
         }
         
         int medals = getNMedals();
-        nMedals += medals;    
+        nMedals += medals; 
+        
+        if(loot.getEfficient())
+            return Transformation.GETEFFICIENT;
+        else if(loot.spaceCity())
+            return Transformation.SPACECITY;
+        else
+            return Transformation.NOTRANSFORM;
     }
     
     public void discardWeapon(int i) { 

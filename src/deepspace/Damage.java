@@ -26,12 +26,7 @@ public abstract class Damage {
 
     public int getNShields() {
         return nShields;
-    }
-
-    abstract public int getNWeapons();
-
-    abstract public ArrayList<WeaponType> getWeapons();
-      
+    }      
     
     
     abstract public Damage adjust(ArrayList<Weapon> w, ArrayList<ShieldBooster> s);

@@ -12,21 +12,15 @@ import java.util.ArrayList;
  * @author victor
  */
 public class NumericDamage extends Damage {
-    int nWeapons;
+    private int nWeapons;
     
     NumericDamage(int nWeapons, int nShields){
         super(nShields);
         this.nWeapons = nWeapons;
     }
     
-    @Override
     public int getNWeapons(){
         return nWeapons;
-    }
-    
-    @Override
-    public ArrayList<WeaponType> getWeapons(){
-            return null;
     }
     
     @Override

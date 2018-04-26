@@ -5,7 +5,7 @@ import java.util.Random;
  * @author victor
  */
 class Dice {
-    private final float NHANGARSPROB ,NSHIELDSPROB, NWEAPONSPROB, FIRSTSHOTPROB;
+    private final float NHANGARSPROB ,NSHIELDSPROB, NWEAPONSPROB, FIRSTSHOTPROB, EXTRAEFFICIENCY;
     private Random generator;
 
     public Dice() {
@@ -13,6 +13,7 @@ class Dice {
         NSHIELDSPROB=0.25f;
         NWEAPONSPROB=0.33f;
         FIRSTSHOTPROB=0.5f;
+        EXTRAEFFICIENCY=0.8f;
         generator = new Random();
     }
     
@@ -50,6 +51,12 @@ class Dice {
     
     boolean spaceStationMoves(float speed) {
         return generator.nextFloat() <= speed;
+    }
+    
+    boolean extraEfficiency() {
+        if(generator.nextFloat() >= EXTRAEFFICIENCY)
+            return false;
+       return true;
     }
     
     
