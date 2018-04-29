@@ -157,12 +157,19 @@ public class GameUniverse {
      } else {
          Loot aLoot = enemy.getLoot();
          Transformation t = station.setLoot(aLoot);
-         if(t == Transformation.GETEFFICIENT /* && !haveSpaceCity*/)
+         if(t == Transformation.GETEFFICIENT) {
              makeStationEfficient();
-         else if (t == Transformation.SPACECITY)
-             createSpaceCity();             
+             System.out.println("Me meto en eficiente");
+             combatResult = CombatResult.STATIONWINSANDCONVERTS;
+         } else if (t == Transformation.SPACECITY) {
+             createSpaceCity(); 
+             System.out.println("Me meto en city");
+             combatResult = CombatResult.STATIONWINSANDCONVERTS;
+         } else {
          combatResult = CombatResult.STATIONWINS;
-     }
+         System.out.println("Me meto en stationwins");
+        }
+     }            
 
      gameState.next(turns,spaceStations.size());
      return combatResult;      
@@ -182,11 +189,13 @@ public class GameUniverse {
             currentStation = new PowerEfficientSpaceStation(currentStation);
         else
             currentStation = new BetaPowerEfficientSpaceStation(currentStation);
+        spaceStations.set(currentStationIndex, currentStation);
     }
     
     private void createSpaceCity(){
         if(!haveSpaceCity){
             currentStation = new SpaceCity(currentStation, spaceStations);
+            spaceStations.set(currentStationIndex, currentStation);
             haveSpaceCity = true;
         }
     }

@@ -21,7 +21,8 @@ public class NumericDamageToUI extends DamageToUI{
         return nWeapons;
     } 
     
+    @Override
     public String getWeaponInfo() {
-        return "" + nWeapons;
+        return ""+nWeapons;
     }
 }

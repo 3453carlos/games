@@ -69,16 +69,19 @@ public class TextUI {
                 pause ("\n Has logrado escapar. Eres una Gallina Espacial.");
                 break;
               case STATIONWINS :
-                String cout = "\n Has GANADO el combate. Disfruta de tu botín.";
-                if( gameUI.getCurrentEnemy().getLoot().getEfficient() )
-                    cout += " ¡Tu eficiencia ha mejorado! ";
-                if( gameUI.getCurrentEnemy().getLoot().spaceCity() )
-                    cout += " ¡Has creado una ciudad espacial! ";
-                pause (cout);
+                pause ("\n Has GANADO el combate. Disfruta de tu botín.");
                 if (controller.haveAWinner()) {
                     pause ("\n\n **** **** ****  HAS GANADO LA PARTIDA  **** **** ****\n");
                     System.exit (0);
                 }
+                break;
+              case STATIONWINSANDCONVERTS :  
+                 String cout = "";
+                if( gameUI.getCurrentEnemy().getLoot().isGetEfficient() )
+                    cout = " Has GANADO  y ¡Tu eficiencia ha mejorado! ";
+                if( gameUI.getCurrentEnemy().getLoot().isSpaceCity() )
+                    cout = " Has ganado el combate y ¡Has creado una ciudad espacial! ";
+                pause (cout);
                 break;
           }
           do {   // Until a valid next turn
@@ -264,8 +267,8 @@ public class TextUI {
       out += " - Hangares .. : " + aLoot.getnHangars() + "\n";
       out += " - Suministros : " + aLoot.getnSupplies() + "\n";
       out += " - Medallas .. : " + aLoot.getnMedals() + "\n";
-      out += " - SpaceCity . : " + aLoot.spaceCity() + "\n";
-      out += " - Efficient . : " + aLoot.getEfficient() + "\n";
+      out += " - SpaceCity . : " + aLoot.isSpaceCity() + "\n";
+      out += " - Efficient . : " + aLoot.isGetEfficient() + "\n";
       return out;
   }
   

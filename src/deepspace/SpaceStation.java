@@ -21,8 +21,8 @@ public class SpaceStation implements SpaceFighter{
     private int nMedals; 
     private String name;
     private Damage pendingDamage;
-    private ArrayList<Weapon> weapons;
-    private ArrayList<ShieldBooster> shieldBoosters;
+    private ArrayList<Weapon> weapons = new ArrayList();
+    private ArrayList<ShieldBooster> shieldBoosters = new ArrayList();
     private Hangar hangar;
     
     
@@ -31,8 +31,6 @@ public class SpaceStation implements SpaceFighter{
         ammoPower = s.getAmmoPower();
         fuelUnits = s.getFuelUnits();
         shieldPower = s.getShieldPower();
-        weapons = new ArrayList();
-        shieldBoosters = new ArrayList();
         nMedals = 0;
     }
     

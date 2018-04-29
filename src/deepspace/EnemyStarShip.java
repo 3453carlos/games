@@ -28,7 +28,7 @@ public class EnemyStarShip implements SpaceFighter{
         this.shieldPower = e.shieldPower;
         this.name = e.name;
         this.loot = e.loot;
-        this.damage = e.damage;
+        this.damage = e.damage.copy();
         
     }
 

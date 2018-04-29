@@ -7,11 +7,12 @@ package deepspace;
 
 /**
  *
- * @author victor
+ * @author Profesor
  */
-public class SafeWeaponCardDeck extends CardDeck<Weapon> {
+class SafeWeaponCardDeck extends CardDeck<Weapon> {
+    @Override
     public Weapon next() {
-        return super.next();
+        Weapon h=(Weapon)(super.next());
+        return new Weapon(h) ;
     }
-    
 }

@@ -7,10 +7,12 @@ package deepspace;
 
 /**
  *
- * @author victor
+ * @author Profesor
  */
-public class SafeEnemyCardDeck extends CardDeck<EnemyStarShip> {
-    public EnemyStarShip next(){
-       return super.next();
+class SafeEnemyCardDeck extends CardDeck<EnemyStarShip> {
+    @Override
+    public EnemyStarShip next() {
+        EnemyStarShip h=(EnemyStarShip)(super.next());
+        return new EnemyStarShip(h) ;
     }
 }

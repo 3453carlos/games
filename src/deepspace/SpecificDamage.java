@@ -39,23 +39,33 @@ public class SpecificDamage extends Damage {
                 res.add(wtypes[i]);
         } 
         
-        return new SpecificDamage(res,Math.min(nShields,s.size()));        
+        return new SpecificDamage(res,adjustShields(s));        
     }
     
     @Override
     public void discardWeapon(Weapon w) {         
         weapons.remove(w.getType());
           
-     }
+    }
+    
+    @Override 
+    public SpecificDamage copy() {
+        return new SpecificDamage(new ArrayList<WeaponType>(weapons),getNShields());
+    }
          
     
     @Override
     public boolean hasNoEffect(){
-        return  weapons.size() == 0 && nShields == 0;
+        return  weapons.size() == 0 && super.hasNoEffect();
+    }
+    
+    @Override
+    public SpecificDamageToUI getUIversion() {
+       return new SpecificDamageToUI(this);
     }
     
     @Override
     public String toString() {
-        return "Weapons: " + weapons + "nShields: " + nShields;
+        return "Weapons: " + weapons + super.toString();
     }
 }

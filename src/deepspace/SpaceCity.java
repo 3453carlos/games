@@ -25,7 +25,7 @@ public class SpaceCity extends SpaceStation {
     }
 
     public float fire(){
-        float fire = base.fire();
+        float fire = super.fire();
         int n = collaborators.size();
         for(int i = 0; i < n; ++i)
             fire += collaborators.get(i).fire();
@@ -33,7 +33,7 @@ public class SpaceCity extends SpaceStation {
     }
     
     public float protection(){
-        float protect = base.protection();
+        float protect = super.protection();
         int n = collaborators.size();
         for(int i = 0; i < n; ++i)
             protect += collaborators.get(i).protection();

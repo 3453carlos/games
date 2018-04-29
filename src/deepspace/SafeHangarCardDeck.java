@@ -5,13 +5,20 @@
  */
 package deepspace;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 /**
  *
- * @author victor
+ * @author Profesor
  */
-public class SafeHangarCardDeck extends CardDeck<Hangar> {
+
+class SafeHangarCardDeck extends CardDeck<Hangar> {
+    @Override
     public Hangar next() {
-        return super.next();
+        Hangar h=(Hangar)(super.next());
+        return new Hangar(h) ;
     }
-    
 }
+

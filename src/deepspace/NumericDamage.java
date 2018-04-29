@@ -23,15 +23,25 @@ public class NumericDamage extends Damage {
         return nWeapons;
     }
     
+    @Override 
+    public NumericDamage copy() {
+        return new NumericDamage(nWeapons,getNShields());
+    }
+    
+    @Override
+    public NumericDamageToUI getUIversion() {
+        return new NumericDamageToUI(this);
+    }
+    
     @Override
     public NumericDamage adjust(ArrayList<Weapon> w, ArrayList<ShieldBooster> s){
-        return new NumericDamage(Math.min(nWeapons,w.size()), Math.min(nShields,s.size()));
+        return new NumericDamage(Math.min(nWeapons,w.size()), adjustShields(s));
     }
     
     
     @Override
     public boolean hasNoEffect(){
-        return nWeapons == 0 && nShields == 0;
+        return nWeapons == 0 && super.hasNoEffect();
     }
     
     @Override
@@ -43,6 +53,7 @@ public class NumericDamage extends Damage {
     
     @Override
     public String toString() {
-        return "nWeapons: " + nWeapons + "nShields: " + nShields;
+        return "nWeapons: " + nWeapons + super.toString();
+       
     }
 }

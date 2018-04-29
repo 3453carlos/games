@@ -7,10 +7,12 @@ package deepspace;
 
 /**
  *
- * @author victor
+ * @author Profesor
  */
-public class SafeShieldBoosterCardDeck extends CardDeck<ShieldBooster>{
+class SafeShieldBoosterCardDeck extends CardDeck<ShieldBooster> {
+    @Override
     public ShieldBooster next() {
-        return super.next();
+        ShieldBooster h=(ShieldBooster)(super.next());
+        return new ShieldBooster(h) ;
     }
 }

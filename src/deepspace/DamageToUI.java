@@ -5,13 +5,11 @@
  */
 package deepspace;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Profesor
  */
-public class DamageToUI {
+public abstract class DamageToUI {
     private int nShields;
 
     DamageToUI(Damage d) {
@@ -22,9 +20,7 @@ public class DamageToUI {
         return nShields;
     }
     
-  public String getWeaponInfo() {
-      String out = "";
-      return out;
-    }
+    public abstract String getWeaponInfo();
+    
     
 }
