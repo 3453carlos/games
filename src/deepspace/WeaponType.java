@@ -28,13 +28,13 @@ public enum WeaponType {
         String res;
         switch (this) {
             case LASER:
-                res = "Laser{" + "power=" + power + '}'; 
+                res = "Laser"; 
                 break;
             case MISSILE:
-                res = "Missile{" + "power=" + power + '}'; 
+                res = "Missile"; 
                 break;
             case PLASMA:
-                res = "Plasma{" + "power=" + power + '}';
+                res = "Plasma";
                 break;
             default:
                 res = "Error";

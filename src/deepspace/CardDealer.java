@@ -71,7 +71,7 @@ class CardDealer {
     }
     
     private void createSuppliesPackages() {
-        /*suppliesPackages.add(new SuppliesPackage(1,10,1));
+        suppliesPackages.add(new SuppliesPackage(1,10,1));
         suppliesPackages.add(new SuppliesPackage(1,10,1));
         suppliesPackages.add(new SuppliesPackage(1,10,1));
         suppliesPackages.add(new SuppliesPackage(2,10,2));
@@ -82,12 +82,12 @@ class CardDealer {
         suppliesPackages.add(new SuppliesPackage(3,0,1));
         suppliesPackages.add(new SuppliesPackage(1,0,3));
         suppliesPackages.add(new SuppliesPackage(3,50,3));    
-        suppliesPackages.add(new SuppliesPackage(40,100,40));*/
+        suppliesPackages.add(new SuppliesPackage(40,100,40));
         suppliesPackages.add(new SuppliesPackage(100,100,100));
     }
     private void createWeapons() {
        weapons.add(new Weapon("Láser infinito",WeaponType.LASER,100));
-       /*weapons.add(new Weapon("Láser ACME",WeaponType.LASER,1));
+       weapons.add(new Weapon("Láser ACME",WeaponType.LASER,1));
        weapons.add(new Weapon("Láser ACME",WeaponType.LASER,1));
        weapons.add(new Weapon("Láser ACME",WeaponType.LASER,1));
        weapons.add(new Weapon("Láser ACME",WeaponType.LASER,1));
@@ -110,12 +110,12 @@ class CardDealer {
        weapons.add(new Weapon("Cañón ACME",WeaponType.PLASMA,1)); 
        weapons.add(new Weapon("Cañón ACME",WeaponType.PLASMA,1)); 
        weapons.add(new Weapon("Cañón ACME",WeaponType.PLASMA,1)); 
-       weapons.add(new Weapon("Cañón mejorado",WeaponType.PLASMA,2));  */     
+       weapons.add(new Weapon("Cañón mejorado",WeaponType.PLASMA,2));      
        
     }
     private void createShieldBoosters() {
        shieldBoosters.add(new ShieldBooster("El escudo infinito",2.0f,100));
-       /*shieldBoosters.add(new ShieldBooster("El escudo definitivo",10.0f,2));
+       shieldBoosters.add(new ShieldBooster("El escudo definitivo",10.0f,2));
        shieldBoosters.add(new ShieldBooster("Escudo ACME",1.5f,2));
        shieldBoosters.add(new ShieldBooster("Escudo ACME",1.5f,2));
        shieldBoosters.add(new ShieldBooster("Escudo ACME",1.5f,2));
@@ -124,27 +124,27 @@ class CardDealer {
        shieldBoosters.add(new ShieldBooster("Escudo ACME",1.5f,2));
        shieldBoosters.add(new ShieldBooster("Escudo ACME",1.5f,2));
        shieldBoosters.add(new ShieldBooster("Escudo normal",3.0f,2));
-       shieldBoosters.add(new ShieldBooster("Escudo normal",4.0f,2));*/
+       shieldBoosters.add(new ShieldBooster("Escudo normal",4.0f,2));
     }
     private void createHangars() {
         hangars.add(new Hangar(10));
-        /*hangars.add(new Hangar(4));
+        hangars.add(new Hangar(4));
         hangars.add(new Hangar(3));
         hangars.add(new Hangar(3));
         hangars.add(new Hangar(3));    
         hangars.add(new Hangar(2));
         hangars.add(new Hangar(2));
         hangars.add(new Hangar(1));
-        hangars.add(new Hangar(1));*/
+        hangars.add(new Hangar(1));
     }
     private void createEnemies() {
-        /*Loot regularLoot0=new Loot(1,2,1,1,1);
+        Loot regularLoot0=new Loot(1,2,1,1,1);
         Loot regularLoot1=new Loot(1,1,2,1,1);
         Loot badLoot=new Loot(1,1,1,0,1);
         Loot goodLoot=new Loot(2,2,2,1,2);
-        */
+        
         Damage regularDamage0=new NumericDamage(2,1); 
-        Damage regularDamage1=new NumericDamage(1,1); /*
+        Damage regularDamage1=new NumericDamage(1,1); 
         Damage lowDamage0=new NumericDamage(1,1);
         Damage lowDamage1=new NumericDamage(0,1);
         Damage lowDamage2=new NumericDamage(1,0);
@@ -205,14 +205,14 @@ class CardDealer {
         enemies.add(new EnemyStarShip("Enemigo difícil 1",100,200,goodLoot,hardSpecificDamage0));   
         
         enemies.add(new EnemyStarShip("Enemigo imposible",500,500,goodLoot,hardSpecificDamage0));    
-        */
+        
         
         //Enemigos que transforman
         
         Loot transformLoot0=new Loot(1,1,1,0,1,true,false);
         Loot transformLoot1=new Loot(1,1,1,0,1,false,true);
         
-        enemies.add(new EnemyStarShip("Enemigo transforma 0",1,2,transformLoot0,regularDamage0));  
+      //  enemies.add(new EnemyStarShip("Enemigo transforma 0",1,2,transformLoot0,regularDamage0));  
         enemies.add(new EnemyStarShip("Enemigo transforma 1",2,3,transformLoot1,regularDamage1));           
     }
 }
